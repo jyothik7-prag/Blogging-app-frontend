@@ -1,0 +1,38 @@
+<div class="jumbotron">
+<button class="btn btn-secondary" (click)='goBack()'>
+  Back
+</button>
+
+
+<div class="container mt-5"><h1 class="text-center">Share Your Thoughts Here</h1></div>
+<form #postForm="ngForm" (ngSubmit)="addPostList()" class="example-full-width">
+       <h3><b>Post your Content</b></h3>
+       <textarea  rows="10" cols="150" [(ngModel)]="post.title" placeholder="write something here..." name="posting" #postTitle="ngModel" required> </textarea>
+       <br>
+    <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">
+        Submit Post
+    </button>
+</form>
+</div>
+
+
+
+<!-- <mat-form-field class="example-full-width">
+    <textarea matInput matTextareaAutosize [(ngModel)]="content" placeholder="comment">
+    </textarea>
+  </mat-form-field>
+  <button class="ui primary button" (click)="addComment()"> Add </button>
+<button class="comment-btn">Save</button> -->
+
+
+<!-- WRITE YOUR CONTENT
+<input type="text" [(ngModel)]="post.title" name="pname" #pname="ngModel" required>
+<span style="color:brown;" *ngIf="pname.touched">
+title has to be filled.
+</span>-->
+<!-- <br> -->
+<!-- CONTENT: -->
+<!-- <input type="text" [(ngModel)]="post.content" name="pcontent" #pcontent="ngModel" required> -->
+<!--<span style="color:brown;" *ngIf="pcontent.touched">
+content has to be filled.
+</span>-->

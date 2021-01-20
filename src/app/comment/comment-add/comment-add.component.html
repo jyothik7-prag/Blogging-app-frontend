@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <button class="btn btn-secondary btn-lg float-right" (click)="goBack()">
+       Back
+    </button>
+    <div class="container">
+   
+<h3><u>New Comment</u></h3><br>
+<form #commentForm="ngForm" (ngSubmit)="addCommentList()">
+    <p>
+       <b>Comment Description:</b><br>
+        <input type="text" class="form-control" [(ngModel)]="commentAdd.commentDescription" 
+        placeholder="write your comment here"
+         name="commentName" #commentName="ngModel" />
+        <span style="color:rgb(114, 7, 7);" *ngIf="commentName.invalid">
+            Comment cannot be null
+        </span>
+    </p>
+    <button type="submit" class="btn btn-primary" [disabled]="commentForm.invalid">
+        Add Comment
+    </button>
+</form>
+</div>
+</div>

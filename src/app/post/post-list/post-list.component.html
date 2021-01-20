@@ -1,0 +1,36 @@
+<div class="jumbotron">
+    <button (click)="addPost()" class="btn btn-primary btn-lg float-right">
+        Create a post
+    </button>
+    <h1 class="text-center">Few posts by bloggers</h1>
+    <button class="btn btn-secondary" (click)='goBack()'>Back</button>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-12" *ngFor="let postSend of postList;">
+                <div class="card w-80">
+                    <img class="card-img-top"
+                    src="https://images.unsplash.com/photo-1523635050353-f5b60dafa07c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80"
+                    alt="Post image">
+                    <div class="card-body">
+                        <h5 class="text-left">By:{{postSend.createdBy.bloggerName}}</h5>
+                        <h5 class="text-left">Community:{{postSend.community.communityDescription}}</h5>
+                        <h6 class="text-left">
+                            {{postSend.title}}
+                        </h6>
+                         
+                           
+                        <button type="button" (click)="editUpvotes(postSend)" class="btn btn-primary">
+                            <!-- <button (click)="editUpvotes(postSend)" > -->
+                                Like
+                            </button>
+                            {{postSend.votes}}<br>
+                       
+                        <button (click)="goToComments(postSend)">
+                            <b>Comments</b>
+                        </button>
+                       </div>
+                </div>
+        </div>
+    </div>
+</div>

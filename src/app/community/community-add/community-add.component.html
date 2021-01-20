@@ -1,0 +1,178 @@
+<div class="jumbotron">
+	<h3>Create Community</h3>
+	</div>
+	<div class="container">
+	<form #commForm="ngForm" (ngSubmit)="addCommunityList()">
+		<p>
+			<b>Community Description:</b><br>
+			<input type="text" class="form-control" [(ngModel)]="community.communityDescription" name="commName" #commName="ngModel" required /><br>
+			<span style="color:rgb(114, 7, 7);" *ngIf="commName.invalid && commName.touched">
+				Name is required.
+			</span>
+			<b>Rules Allowed:</b><br>
+			<input type="text" class="form-control" [(ngModel)]="community.postRulesAllowed[0]" name="ruleallow"><br>
+	
+			<b>Rules NotAllowed:</b><br>
+			<input type="text" class="form-control" [(ngModel)]="community.postRulesDisAllowed[0]" name="ruledisallow">
+		</p>
+		<button type="submit" class="btn btn-primary" [disabled]="commForm.invalid">
+			Add
+		</button>
+		<button  class="btn btn-secondary" (click)="goBackToList()">Discard</button>
+	</form>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3> Add Employee </h3>
+<form #empForm="ngForm" (ngSubmit)="add()">              
+    <p>
+		Enter Name: <br>
+		<input 
+			type="text" 
+			[(ngModel)]=employee.name
+			name="empName"
+			#empName="ngModel"
+			required /> 
+		<span style="color:red;"
+			*ngIf="empName.invalid && empName.touched">
+			Name is required.
+		</span>
+		<br>
+
+		<br> Enter Salary: <br>
+		<input 
+			type="text" 
+			[(ngModel)]=employee.salary
+			pattern="[0-9]{4,}"
+			name="empSal"
+			#empSal="ngModel"
+			required /> 
+		<span style="color:red;"
+			*ngIf="empSal.invalid && empSal.touched">
+			Salary is invalid.
+		</span>
+		<br>
+		
+		<br> Enter Employee DOB: <br>
+		<input 
+			type="date" 
+			min="1930-01-01" 
+			max="2010-12-31" 
+			[(ngModel)]=employee.date
+			name="empDOB"
+			(change)="dateChange($event)"
+			#empDOB="ngModel"
+			required /> 
+		<span style="color:red;"
+			*ngIf="empForm.submitted && empDOB.invalid && empDOB.touched">
+			Date of birth is invalid.
+		</span>	
+		<br>
+		
+		<br> Gender: <span>&nbsp;</span>
+			<input 
+				type="radio"
+				[(ngModel)]=employee.gender
+				name="empGender"
+				value="Male">
+			<span> Male </span> <span>&nbsp;</span>
+			<input 
+				type="radio"
+				[(ngModel)]=employee.gender
+				name="empGender"
+				value="Female"> 
+			<span> Female </span> <span>&nbsp;</span>  
+			<input 
+				type="radio"
+				[(ngModel)]=employee.gender
+				name="empGender"
+				value="Other"> 
+			<span> Other </span> <span>&nbsp;</span>
+		<br>
+
+		<br> Enter City: 
+		<select 
+			[(ngModel)]=employee.city
+			name="empCity"
+			required>
+			<option value="">Select</option>
+			<option value="Chennai">Chennai</option>
+			<option value="Kolkata">Kolkata</option>
+			<option value="Delhi">Delhi</option>
+			<option value="Mumbai">Mumbai</option>
+		</select> 
+		<br>
+
+		<br> Enter Address: <br>
+		<input 
+			type="textarea" 
+			[(ngModel)]=employee.address
+			name="empAddress"
+			#empAddress="ngModel"
+			required /> 
+		<span style="color:red;"
+			*ngIf="empAddress.invalid && empAddress.touched">
+			Address is empty.
+		</span>	
+		<br>
+
+		<br> Enter Image URL: <br>
+		<input 
+			type="text" 
+			[(ngModel)]=employee.photo
+			name="empimage"
+			#empImg="ngModel"
+			required /> 
+		<span style="color:red;"
+			*ngIf="empImg.invalid && empImg.touched">
+			Image is invalid.
+		</span>
+		<br>
+	</p>
+
+    <button 
+		type="submit"
+		class="btn btn-primary"
+		[disabled]="empForm.invalid">
+	Add Details
+	</button>
+
+</form> -->
+
+<!--[(ngModel)]=productName
+			name="productName"
+            #prodControl="ngModel"
+        
+        
+        
+        [disabled]="prodForm.invalid"-->

@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <h1>Register</h1>
+    </div>
+<body>
+    <div class="container">
+        <form class="form-horizontal" #bloggerInsertionForm="ngForm" (ngSubmit)="addBlogger(bloggerInsertionForm)">
+            <fieldset>
+           
+            <div class="form-group">
+                <label for=""><b>Blogger Name</b></label>
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter blogger name" 
+                [(ngModel)]="blogger.bloggerName" name="bName" #bName="ngModel" required>
+                <span style="color: crimson;" *ngIf="bName.invalid && bName.touched">
+                name field should not be empty!
+            </span>
+                </div>
+            </div>
+            <div class="form-group">
+               <b>Email Id</b> 
+                <div class="form-group">
+                 <input type="text" class="form-control" placeholder="enter your email" 
+                [(ngModel)]="blogger.user.role" name="pwd" #pwd="ngModel" required>
+                <span style="color: crimson;" *ngIf="pwd.invalid && pwd.touched">
+                    email id cannot be null!
+                </span>  
+                </div>
+            </div>
+            <div class="form-group">
+               <b> Password </b> 
+                <div class="form-group">
+                 <input type="password" class="form-control" placeholder="Enter password" 
+                [(ngModel)]="blogger.user.password" name="pwd" #pwd="ngModel" required>
+                <span style="color: crimson;" *ngIf="pwd.invalid && pwd.touched">
+                    password has to be filled!
+                </span>  
+                </div>
+            </div>
+            <div class="form-actions">
+            <button type="submit" class="btn btn-primary" [disabled]="bName.invalid">Register</button>
+            </div><br>
+            <button class="btn btn-primary" (click)="discard()">Discard</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
